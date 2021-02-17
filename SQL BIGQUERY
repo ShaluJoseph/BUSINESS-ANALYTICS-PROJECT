@@ -1,0 +1,11 @@
+__MINIMUM AND MAXIMUM DEATHS DUE TO COVID BETWEEN FEBRUARY AND APRIL 2020
+SELECT
+  MIN(deaths),
+  MAX(deaths)
+FROM
+  `bigquery-public-data.covid19_italy.national_trends`
+WHERE
+  date BETWEEN "2020-02-01"
+  AND "2020-04-30"
+
+ 
