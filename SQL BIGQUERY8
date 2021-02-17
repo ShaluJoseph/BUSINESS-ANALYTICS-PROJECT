@@ -1,0 +1,15 @@
+__Left Join Table to Find FDIC ID OF ACTIVE INSTITUTIONS
+SELECT
+  location.institution_name,
+  location.branch_name,
+  institutions.fdic_id
+FROM
+  `bigquery-public-data.fdic_banks.locations`location
+LEFT JOIN
+  `bigquery-public-data.fdic_banks.institutions`institutions
+ON
+  (location.fdic_certificate_number=institutions.fdic_certificate_number)
+WHERE
+  institutions.active=TRUE
+LIMIT
+  10
