@@ -1,10 +1,16 @@
 __SELECT FEMALE NAMES STARTING WITH A
 SELECT
-  name,state,year
+  name,
+  state,
+  year
 FROM
   `bigquery-public-data.usa_names.usa_1910_2013`
 WHERE
   name LIKE 'A%'
   AND gender='F'
 GROUP BY
- name,state,year
+  name,
+  state,
+  year
+LIMIT
+  10
