@@ -1,0 +1,17 @@
+__SORT THE CRITICALITY OF THE COVID SITUATION 0N ACCOUNT OF THE CONFIRMED CASES
+SELECT
+  DATE,
+  total_confirmed_cases,
+  CASE
+    WHEN total_confirmed_cases<1000 THEN 'CONTROLLABLE'
+    WHEN total_confirmed_cases BETWEEN 1000
+  AND 10000 THEN 'CRITICAL'
+    WHEN total_confirmed_cases >10000 AND total_confirmed_cases<100000 THEN 'SUPER CRITICAL'
+  ELSE
+  'GOD ONLY KNOWS'
+END
+  AS DANGER_LEVEL
+FROM
+  `bigquery-public-data.covid19_italy.national_trends`
+LIMIT
+  10
