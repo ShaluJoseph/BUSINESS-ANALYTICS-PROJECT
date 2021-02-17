@@ -1,0 +1,24 @@
+__Join station table and trip table according to the given conditions.
+SELECT
+  bs.name,
+  bt.trip_id,
+  bt.subscriber_type,
+  bt.bikeid
+FROM
+  `bigquery-public-data.austin_bikeshare.bikeshare_stations`bs
+INNER JOIN
+  `bigquery-public-data.austin_bikeshare.bikeshare_trips`bt
+ON
+  (bs.station_id=bt.start_station_id)
+WHERE
+  bt.duration_minutes>30
+  AND bs.status='active'
+GROUP BY
+  bs.name,
+  bt.subscriber_type,
+  bt.trip_id,
+  bt.bikeid
+ORDER BY
+  bt.trip_id
+LIMIT
+  10
