@@ -1,0 +1,9 @@
+__	Extract India’s Covid data and arrange it in descending order of states 
+SELECT
+  *
+FROM
+  `bigquery-public-data.covid19_open_data.covid19_open_data`
+WHERE
+  country_name ="India"
+ORDER BY
+  subregion1_name DESC
