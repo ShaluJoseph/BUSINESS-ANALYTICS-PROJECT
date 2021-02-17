@@ -1,0 +1,11 @@
+__	DEATHS AND RECOVERIES IN ITALY DUE TO COVID IN APRIL 2020 WHERE NUMBER OF PATIENTS HOSPITALIZED WITH SYMPTOMS IS GREATER THAN TWENTY THOUSAND A DAY
+SELECT
+  DATE,
+  deaths,
+  recovered,
+FROM
+  `bigquery-public-data.covid19_italy.national_trends`
+WHERE
+  hospitalized_patients_symptoms>20000
+  AND date BETWEEN "2020-04-01"
+  AND "2020-04-30"
