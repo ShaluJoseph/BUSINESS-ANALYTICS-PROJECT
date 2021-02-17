@@ -1,4 +1,4 @@
-__Left Join Table to Find FDIC ID OF ACTIVE INSTITUTIONS
+__Left Join Table to Find FDIC ID OF ACTIVE INSTITUTIONS SEPARATELY BY BRANCH NAME
 SELECT
   location.institution_name,
   location.branch_name,
