@@ -1,4 +1,4 @@
-__TEST FOR NULL VALUES
+__TEST FOR NON NULL VALUES
 SELECT
   date,
   total_confirmed_cases,
@@ -6,6 +6,6 @@ SELECT
 FROM
   `bigquery-public-data.covid19_italy.national_trends`
 WHERE
-  tests_performed IS NULL
+  tests_performed IS NOT NULL
 LIMIT
   10
