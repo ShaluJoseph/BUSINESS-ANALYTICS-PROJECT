@@ -7,3 +7,5 @@ WHERE
   country_name ="India"
 ORDER BY
   subregion1_name DESC
+LIMIT
+  10  
