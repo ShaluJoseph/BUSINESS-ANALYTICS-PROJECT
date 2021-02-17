@@ -1,0 +1,10 @@
+__OBTAIN THE COVID DATA OF VERCELLI AND TORINO PROVINCES OF PIEMONTE REGION
+SELECT
+  *
+FROM
+  `bigquery-public-data.covid19_italy.data_by_province`
+WHERE
+  region_name= 'Piemonte'AND (province_name= 'Vercelli'
+    OR province_name='Torino')
+LIMIT
+  10
