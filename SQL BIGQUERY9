@@ -1,0 +1,20 @@
+__Right Join Table to Find institution with less than 100 and more that 10CR total assets
+   SELECT
+  location.institution_name,
+  location.institution_class,
+  institutions.total_assets
+FROM
+  `bigquery-public-data.fdic_banks.institutions`institutions
+RIGHT JOIN
+  `bigquery-public-data.fdic_banks.locations`location
+ON
+  (location.fdic_certificate_number=institutions.fdic_certificate_number)
+WHERE
+  institutions.total_assets < 100
+  OR institutions.total_assets>100000000
+GROUP BY
+  location.institution_name,
+  location.institution_class,
+  institutions.total_assets
+LIMIT
+  10
