@@ -1,0 +1,12 @@
+__The names which are repeated more than 5000 times 
+SELECT
+  gender,
+  name,
+  COUNT(name) aggregate
+FROM
+  `bigquery-public-data.usa_names.usa_1910_2013`
+GROUP BY
+  gender,
+  name
+HAVING
+  COUNT(name) >= 5000
