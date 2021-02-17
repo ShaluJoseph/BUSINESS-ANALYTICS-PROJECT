@@ -1,0 +1,11 @@
+__TEST FOR NULL VALUES
+SELECT
+  date,
+  total_confirmed_cases,
+  tests_performed
+FROM
+  `bigquery-public-data.covid19_italy.national_trends`
+WHERE
+  tests_performed IS NULL
+LIMIT
+  10
